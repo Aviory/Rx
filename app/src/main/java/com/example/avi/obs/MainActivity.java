@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new Runner(ConsoleStrategy.getInstance()).run();
+        new Runner(new Adapter(ConsoleStrategy.getInstance())).run();
 
     }
 

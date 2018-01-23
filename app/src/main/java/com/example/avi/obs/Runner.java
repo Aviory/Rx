@@ -7,13 +7,13 @@ import android.util.Log;
  */
 
 class Runner {
-    Strategy strategy;
+    Target target;
 
-    public Runner(Strategy strategy) {
-        this.strategy = strategy;
+    public Runner(Target target) {
+        this.target = target;
     }
 
     public void run() {
-        strategy.print("hello");
+        target.addMsg("hello", "sss");
     }
 }
