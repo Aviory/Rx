@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "806411741186",
+    "firebase_url": "https://observeble.firebaseio.com",
+    "project_id": "observeble",
+    "storage_bucket": "observeble.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806411741186:android:9e290fc1449168b1",
+        "android_client_info": {
+          "package_name": "com.example.avi.obs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806411741186-8m08aijinbqechm7g71b3k0pet97u1d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.avi.obs",
+            "certificate_hash": "a2bce94fb9a78650d30822b3d83ffa6259602509"
+          }
+        },
+        {
+          "client_id": "806411741186-6ndo9udkfors82ut94clq9a8n0qkorpb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWu76Ko_O2x3Iq7TOPZExJ1nE75NdPsT8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806411741186-6ndo9udkfors82ut94clq9a8n0qkorpb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
