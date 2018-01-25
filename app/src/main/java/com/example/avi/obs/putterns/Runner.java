@@ -1,12 +1,10 @@
-package com.example.avi.obs;
-
-import android.util.Log;
+package com.example.avi.obs.putterns;
 
 /**
  * Created by avi on 23.01.18.
  */
 
-class Runner {
+public class Runner {
     Target target;
 
     public Runner(Target target) {

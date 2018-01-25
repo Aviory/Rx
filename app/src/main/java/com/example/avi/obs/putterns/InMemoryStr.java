@@ -1,4 +1,4 @@
-package com.example.avi.obs;
+package com.example.avi.obs.putterns;
 
 import java.util.LinkedList;
 
