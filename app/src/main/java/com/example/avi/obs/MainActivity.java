@@ -8,6 +8,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.avi.obs.mvc.Controller;
+import com.example.avi.obs.putterns.Adapter;
+import com.example.avi.obs.putterns.Component;
+import com.example.avi.obs.putterns.ConsoleStrategy;
+import com.example.avi.obs.putterns.Runner;
+import com.example.avi.obs.putterns.ToUpperCaseDecorator;
 
 public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
@@ -16,9 +21,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // new Runner(new Adapter(ConsoleStrategy.getInstance())).run();FragmentManager fragmentManager = getFragmentManager()
-        startMVC();
+        String msg = "Hello World!";
+        Component component = new Runner(new Adapter(ConsoleStrategy.getInstance()));
+        component = new ToUpperCaseDecorator(component);
+        component = new ToReplaceDecorator(component,"<post>");
+        component.run(msg);
+        //startMVC();
     }
+
     private void startMVC(){
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
