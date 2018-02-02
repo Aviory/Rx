@@ -5,14 +5,15 @@ package com.example.avi.obs.putterns;
  */
 
 public class Runner implements Component {
-    Target target;
+    private Observable observable = new ObservableBody();
 
-    public Runner(Target target) {
-        this.target = target;
-    }
+  public void addTarget(Target target){
+      observable.addObs(new TargetObserverAdapter(target));
+  }
 
     @Override
     public void run(String msg) {
-        target.addMsg(msg);
+
+        observable.notifyObs(msg);
     }
 }

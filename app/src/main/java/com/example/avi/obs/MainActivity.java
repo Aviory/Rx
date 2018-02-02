@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String msg = "Hello World!";
-        Component component = new Runner(new Adapter(ConsoleStrategy.getInstance()));
+        Runner runner = new Runner();
+        runner.addTarget(new Adapter(ConsoleStrategy.getInstance()));
+        Component component = runner;
         component = new ToUpperCaseDecorator(component);
         component = new ToReplaceDecorator(component,"<post>");
         component.run(msg);
