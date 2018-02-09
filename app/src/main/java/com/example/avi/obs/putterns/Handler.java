@@ -5,11 +5,13 @@ package com.example.avi.obs.putterns;
  */
 
 public abstract class Handler {
+    public static final Handler NULL = new NullHandler();
+
+    private Handler next;
+
     public void addNext(Handler next) {
         this.next = next;
     }
-
-    private Handler next;
     public void handle(Request request) {
         //do something
         if(next!=null){

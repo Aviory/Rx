@@ -29,16 +29,17 @@ public class MainActivity extends AppCompatActivity {
         Runner runner = RunnerFactory.create();
         runner.addTarget(new Adapter(ConsoleStrategy.getInstance()));
 
-        //-------------
+        //-------------//nullpoint pattern + chainOfResposibility
 
-        Handler handler = new HelloWorldHandler();//nullpoint pattern
-        runner.addHandler(handler);
+        runner.addHandler(new HelloWorldHandler("!"));
+        runner.addHandler(new HelloWorldHandler("^)"));
+        runner.addHandler(new HelloWorldHandler("asfsss"));
 
 
-        //--------------
+        //--------------//decorator
         Component component = runner;
-        component = new ToUpperCaseDecorator(component);
-        component = new ToReplaceDecorator(component,"<post>");
+//        component = new ToUpperCaseDecorator(component);
+//        component = new ToReplaceDecorator(component,"<post>");
         component.run(msg);
         //startMVC();
     }
