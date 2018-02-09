@@ -12,6 +12,8 @@ import com.example.avi.obs.putterns.Adapter;
 import com.example.avi.obs.putterns.Component;
 import com.example.avi.obs.putterns.ConsoleStrategy;
 import com.example.avi.obs.putterns.Runner;
+import com.example.avi.obs.putterns.RunnerFactory;
+import com.example.avi.obs.putterns.RunnerImpl;
 import com.example.avi.obs.putterns.ToUpperCaseDecorator;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         String msg = "Hello World!";
-        Runner runner = new Runner();
+        Runner runner = RunnerFactory.create();
         runner.addTarget(new Adapter(ConsoleStrategy.getInstance()));
         Component component = runner;
         component = new ToUpperCaseDecorator(component);
@@ -36,6 +38,5 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container, new Controller());
         fragmentTransaction.commit();
-
     }
 }
