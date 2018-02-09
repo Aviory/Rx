@@ -6,15 +6,22 @@ package com.example.avi.obs.putterns;
 
 public class RunnerImpl implements Runner {
     private Observable observable = new ObservableBody();
+    private Handler handler = new NullHandler();
 
-  @Override
+    @Override
   public void addTarget(Target target){
       observable.addObs(new TargetObserverAdapter(target));
   }
 
     @Override
-    public void run(String msg) {
+    public void addHandler(Handler handler) {
+        this.handler = handler;
+    }
 
-        observable.notifyObs(msg);
+    @Override
+    public void run(String msg) {
+        Request request = new Request(msg);
+        handler.handle(request);
+        observable.notifyObs(request.getMessage());
     }
 }

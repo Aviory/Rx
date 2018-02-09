@@ -6,4 +6,6 @@ package com.example.avi.obs.putterns;
 
 public interface Runner extends Component{
     void addTarget(Target target);
+
+    void addHandler(Handler handler);
 }
