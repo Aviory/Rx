@@ -5,5 +5,9 @@ package com.example.avi.obs.putterns;
  */
 
 class NullHandler extends Handler {
-    //do nothing
+    @Override
+    protected void handleRequest(Request request) {
+        //do nothing
+
+    }
 }

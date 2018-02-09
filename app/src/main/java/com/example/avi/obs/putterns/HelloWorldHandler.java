@@ -12,13 +12,11 @@ public class HelloWorldHandler extends Handler {
     }
 
     @Override
-    public void handle(Request request) {
-        //do something
-
+    protected void handleRequest(Request request) {
         String s = request.getMessage().toLowerCase();
+
         if(s.contains("hello") && s.contains("world")){
             request.setMessage(request.getMessage()+this.s);
         }
-        super.handle(request);
     }
 }

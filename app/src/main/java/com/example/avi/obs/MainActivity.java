@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         runner.addHandler(new HelloWorldHandler("!"));
         runner.addHandler(new HelloWorldHandler("^)"));
-        runner.addHandler(new HelloWorldHandler("asfsss"));
 
 
         //--------------//decorator

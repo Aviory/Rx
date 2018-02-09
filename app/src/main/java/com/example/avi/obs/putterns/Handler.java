@@ -12,10 +12,21 @@ public abstract class Handler {
     public void addNext(Handler next) {
         this.next = next;
     }
-    public void handle(Request request) {
+
+    public void handle(Request request) {//this is Template pattern
         //do something
+        handleRequest(request);
+
         if(next!=null){
             next.handle(request);
         }
+
+        doAfterAll(request);
     }
+
+    protected void doAfterAll(Request request) {
+        //implement in subclass
+    }
+
+    protected abstract void handleRequest(Request request);
 }
