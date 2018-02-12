@@ -5,18 +5,17 @@ package com.example.avi.obs.putterns;
  */
 
 public class HelloWorldHandler extends Handler {
-    private String s;
+    private Command command;
 
-    public HelloWorldHandler(String s) {
-        this.s = s;
+    public HelloWorldHandler(Command command) {
+        this.command = command;
     }
 
     @Override
     protected void handleRequest(Request request) {
         String s = request.getMessage().toLowerCase();
-
         if(s.contains("hello") && s.contains("world")){
-            request.setMessage(request.getMessage()+this.s);
+            command.change(request);
         }
     }
 }

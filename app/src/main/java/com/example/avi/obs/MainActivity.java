@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         //-------------//nullpoint pattern + chainOfResposibility
 
-        runner.addHandler(new HelloWorldHandler("!"));
-        runner.addHandler(new HelloWorldHandler("^)"));
+        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("!")));
+        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("^)")));
 
 
         //--------------//decorator
