@@ -4,9 +4,7 @@ package com.example.avi.obs;
  * Created by avi on 16.02.18.
  */
 
-interface AbstractFactory {
+interface AbstractMethod {
     FactoryProduct getEmotion();
 
-
-    FactoryProduct getSymvol();
 }

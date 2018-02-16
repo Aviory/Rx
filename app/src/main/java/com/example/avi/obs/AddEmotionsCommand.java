@@ -8,14 +8,14 @@ import com.example.avi.obs.putterns.Request;
  */
 
 class AddEmotionsCommand implements Command {
-    private AbstractFactory abstractFactory;
+    private AbstractMethod abstractMethod;
 
-    public AddEmotionsCommand(AbstractFactory abstractFactory) {
-        this.abstractFactory = abstractFactory;
+    public AddEmotionsCommand(AbstractMethod abstractMethod) {
+        this.abstractMethod = abstractMethod;
     }
 
     @Override
     public void change(Request request) {
-        request.setMessage(request.getMessage()+this.abstractFactory.getEmotion().get());
+        request.setMessage(request.getMessage()+this.abstractMethod.getEmotion().get());
     }
 }
