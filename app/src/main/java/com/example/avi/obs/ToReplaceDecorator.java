@@ -13,7 +13,8 @@ class ToReplaceDecorator extends Decorator {
 
     @Override
     public void run(String msg) {
-        super.run(msg+replace);
+
+        super.run(msg.replace(" ",replace));
     }
 
     protected ToReplaceDecorator(Component component, String replace) {

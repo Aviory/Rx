@@ -25,22 +25,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AbstractFactory factory = new SadFactory();
         String msg = "Hello World";
+
+        process(factory, msg);
+        //startMVC();
+    }
+
+    private void process(AbstractFactory factory, String msg) {
         Runner runner = RunnerFactory.create();
         runner.addTarget(new Adapter(ConsoleStrategy.getInstance()));
 
         //-------------//nullpoint pattern + chainOfResposibility
 
-        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("!")));
-        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand("^)")));
+
+        runner.addHandler(new HelloWorldHandler(new AddSymvolCommand(factory)));
+        runner.addHandler(new HelloWorldHandler(new AddEmotionsCommand(factory)));
 
 
         //--------------//decorator
         Component component = runner;
-//        component = new ToUpperCaseDecorator(component);
-//        component = new ToReplaceDecorator(component,"<post>");
+        component = new ToUpperCaseDecorator(component);
+        component = new ToReplaceDecorator(component,factory.getSymvol().get());
         component.run(msg);
-        //startMVC();
     }
 
     private void startMVC(){
