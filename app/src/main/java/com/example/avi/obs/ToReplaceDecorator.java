@@ -9,7 +9,8 @@ import com.example.avi.obs.putterns.Decorator;
 
 class ToReplaceDecorator extends Decorator {
 
-    private final String replace;
+    private final String replace="-";
+
 
     @Override
     public void run(String msg) {
@@ -17,8 +18,7 @@ class ToReplaceDecorator extends Decorator {
         super.run(msg.replace(" ",replace));
     }
 
-    protected ToReplaceDecorator(Component component, String replace) {
+    protected ToReplaceDecorator(Component component) {
         super(component);
-        this.replace = replace;
     }
 }
